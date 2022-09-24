@@ -44,7 +44,7 @@ export class AuthService {
     return this.signToken(user.id, user.email)
    }
 
-   async signToken(
+   public async signToken(
     userId: string,
     email: string
    ): Promise<string>{
