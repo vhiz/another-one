@@ -3,4 +3,6 @@ export interface User{
     name?: string;
     password: string;
     email:string;
+    amount?:string;
+    phoneno?: string;
 }

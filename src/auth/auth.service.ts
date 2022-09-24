@@ -23,10 +23,11 @@ export class AuthService {
         if(existname) throw new ForbiddenException('name alreadys exist')
 
         const hashed = await argon.hash(user.password)
-        const newUser = await new this.userModule({
-            email:user.email,
-            password:hashed,
-            name:user.name
+        const newUser = new this.userModule({
+            email: user.email,
+            password: hashed,
+            name: user.name,
+            amount: 30000
         })
         return await newUser.save()
     }
